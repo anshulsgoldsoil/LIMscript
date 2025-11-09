@@ -412,14 +412,14 @@
                 </div>
             </div>
             
-            <!-- PHASE 3 - UPDATED WITH ALL SECTIONS -->
+            <!-- PHASE 3 - FULLY CORRECTED WITH ALL SECTIONS -->
             <div id="phase3" class="phase-section">
                 <div class="flow-box" onclick="toggleBox(this)">
                     <div class="box-title">
-                        MOTIVATION DISCOVERY (WHY)
+                        MOTIVATION DISCOVERY (WHY) - Part 1: Acquisition
                         <span class="expand-icon">⌄</span>
                     </div>
-                    <div class="box-preview">Understanding their reason for selling...</div>
+                    <div class="box-preview">Understanding how they acquired the property...</div>
                     <div class="box-content">
                         <div class="script-text">
                             <strong>AGENT:</strong> "Excellent. Let me ask you this - did you buy that land or inherit it?"
@@ -442,46 +442,66 @@
                                 "What was your original idea when you bought it - were you going to use it for something specific?"
                             </div>
                         </div>
-                        
-                        <div style="background: #e8f5e9; padding: 15px; border-radius: 10px; margin: 20px 0;">
-                            <strong style="color: #2e7d32;">SELLER RESPONSE PATHS:</strong>
-                        </div>
-                        
+                    </div>
+                </div>
+                
+                <div class="flow-box" onclick="toggleBox(this)">
+                    <div class="box-title">
+                        MOTIVATION DISCOVERY (WHY) - Part 2: Usage & Plans
+                        <span class="expand-icon">⌄</span>
+                    </div>
+                    <div class="box-preview">Based on whether they're using the property...</div>
+                    <div class="box-content">
                         <div class="response-option">
-                            <strong>SECTION D: Not Using Property →</strong>
+                            <strong>SECTION D: Seller NOT Using Property (No Future Plans) →</strong>
                             <div class="script-text" style="margin-left: 20px; background: #f1f8e9;">
-                                <strong>For Inherited:</strong><br>
-                                "Is this something your family wants to deal with in the future?"<br><br>
+                                <strong>If they inherited and not using:</strong><br>
+                                AGENT: "Is this something your family wants to deal with in the future?"<br><br>
                                 
-                                <strong>For Purchased but not using:</strong><br>
-                                "Why hold onto something you're not using when you could have cash instead in the next few weeks?"<br><br>
+                                <strong>If they purchased but not using:</strong><br>
+                                AGENT: "Why hold onto something you're not using when you could have cash instead in the next few weeks?"<br><br>
                                 
-                                <span class="action-tag">Continue to Timeline Check</span>
+                                <span class="action-tag">Continue to Timeline Check Below</span>
                             </div>
                         </div>
                         
                         <div class="response-option">
-                            <strong>SECTION E: Has Future Plans →</strong>
+                            <strong>SECTION E: Seller Has Future Plans (Wants to Keep/Use) →</strong>
                             <div class="script-text" style="margin-left: 20px; background: #fff3e0;">
-                                "I hear you. How long have you been planning to do that?"<br><br>
+                                AGENT: "I hear you. How long have you been planning to do that?"<br><br>
                                 
-                                <strong>If Seller says "Years":</strong><br>
-                                "So it's been years and hasn't happened yet... What if it never does? Would you rather have the cash now?"<br><br>
+                                → SELLER: "Years" / "A while" / "Long time"<br><br>
                                 
-                                <div style="margin-left: 20px;">
-                                    <strong>→ If "YES":</strong> <span class="action-tag">Continue to Timeline Check</span><br>
-                                    <strong>→ If "NO":</strong> <span class="action-tag warning-tag">Return to Section A (Nurture/DNC)</span>
+                                AGENT: "So it's been years and hasn't happened yet... What if it never does? Would you rather have the cash now?"<br><br>
+                                
+                                <div style="margin-left: 20px; margin-top: 10px;">
+                                    <div style="background: #e8f5e9; padding: 10px; border-radius: 5px; margin: 5px 0;">
+                                        <strong>→ If SELLER says "YES":</strong> 
+                                        <span class="action-tag">Continue to Timeline Check Below</span>
+                                    </div>
+                                    <div style="background: #ffebee; padding: 10px; border-radius: 5px; margin: 5px 0;">
+                                        <strong>→ If SELLER says "NO":</strong> 
+                                        <span class="action-tag warning-tag">Return to Phase 1 Section A (Not interested - Nurture/DNC)</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div style="background: #e3f2fd; padding: 15px; border-radius: 10px; margin: 20px 0;">
-                            <div class="script-text">
-                                <strong>⏰ TIMELINE CHECK:</strong><br>
-                                "If I could make you a fair offer today, is there any reason you wouldn't want to close in the next few weeks?"<br><br>
-                                [Seller provides response about timeline]<br><br>
-                                <span class="action-tag">Continue to Phase 4: Price Expectations</span>
-                            </div>
+                    </div>
+                </div>
+                
+                <div class="flow-box" onclick="toggleBox(this)">
+                    <div class="box-title">
+                        TIMELINE CHECK
+                        <span class="expand-icon">⌄</span>
+                    </div>
+                    <div class="box-preview">Confirming their selling timeline...</div>
+                    <div class="box-content">
+                        <div class="script-text" style="background: #e3f2fd;">
+                            <strong>AGENT:</strong> "If I could make you a fair offer today, is there any reason you wouldn't want to close in the next few weeks?"<br><br>
+                            
+                            [Seller provides response about timeline]<br><br>
+                            
+                            <span class="action-tag">Continue to Phase 4: Price Expectations</span>
                         </div>
                     </div>
                 </div>

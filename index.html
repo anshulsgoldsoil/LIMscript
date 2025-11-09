@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Acre Deal - Lead Qualification Flowchart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .controls {
+            text-align: center;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .phase-btn {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .phase-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .phase-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .phase-btn.inactive {
+            background: #e0e0e0;
+            color: #666;
+        }
+        
+        .flowchart {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            min-height: 600px;
+        }
+        
+        .phase-section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .phase-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .flow-box {
+            background: white;
+            border: 3px solid #667eea;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .flow-box:hover {
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            transform: scale(1.02);
+        }
+        
+        .flow-box.expanded {
+            background: linear-gradient(135deg, #f5f7ff, #fff);
+            border-color: #764ba2;
+        }
+        
+        .box-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .expand-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+        
+        .flow-box.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+        
+        .box-preview {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .box-content {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        .flow-box.expanded .box-content {
+            display: block;
+        }
+        
+        .script-text {
+            background: #f0f4ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #667eea;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        .response-option {
+            background: #fff5e6;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 8px 0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .response-option strong {
+            color: #e65100;
+        }
+        
+        .action-tag {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .warning-tag {
+            background: #ff5722;
+        }
+        
+        .info-tag {
+            background: #2196f3;
+        }
+        
+        .decision-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .tree-node {
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .arrow {
+            font-size: 2em;
+            color: #667eea;
+            margin: 10px 0;
+        }
+        
+        .quick-tips {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .quick-tips h3 {
+            color: #d84315;
+            margin-bottom: 10px;
+        }
+        
+        .quick-tips ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .quick-tips li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .quick-tips li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .phase-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏡 The Acre Deal - Lead Qualification Script</h1>
+        <p class="subtitle">Interactive Flowchart - Click any box to expand the full script</p>
+        
+        <div class="controls">
+            <button class="phase-btn active" onclick="showPhase('phase1')">Phase 1: Opening</button>
+            <button class="phase-btn inactive" onclick="showPhase('phase2')">Phase 2: Interest</button>
+            <button class="phase-btn inactive" onclick="showPhase('phase3')">Phase 3: Why</button>
+            <button class="phase-btn inactive" onclick="showPhase('phase4')">Phase 4: Price</button>
+            <button class="phase-btn inactive" onclick="showPhase('phase5')">Phase 5: Ownership</button>
+            <button class="phase-btn inactive" onclick="showPhase('phase6')">Phase 6: Access</button>
+            <button class="phase-btn inactive" onclick="showPhase('phase7')">Phase 7: Details</button>
+            <button class="phase-btn inactive" onclick="showPhase('phase8')">Phase 8: Close</button>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #4caf50;"></div>
+                <span>Continue to next phase</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff9800;"></div>
+                <span>Handle objection</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff5722;"></div>
+                <span>End call/Nurture</span>
+            </div>
+        </div>
+        
+        <div class="flowchart">
+            <!-- PHASE 1 -->
+            <div id="phase1" class="phase-section active">
+                <div class="flow-box" onclick="toggleBox(this)">
+                    <div class="box-title">
+                        GREETING & PERMISSION
+                        <span class="expand-icon">⌄</span>
+                    </div>
+                    <div class="box-preview">"Hey, is this [Name]?"</div>
+                    <div class="box-content">
+                        <div class="script-text">
+                            <strong>AGENT:</strong> "Hey, is this [Name]?"
+                        </div>
+                        <div class="response-option">
+                            <strong>YES →</strong> Continue to next question
+                        </div>
+                        <div class="response-option">
+                            <strong>NO →</strong> "My apologies for the confusion. Have a great day!" 
+                            <span class="action-tag warning-tag">MARK AS: WRNG</span>
+                        </div>
+                        
+                        <div class="script-text">
+                            <strong>AGENT:</strong> "Great! Quick question - do you still own that land in [County]?"
+                        </div>
+                        <div class="response-option">
+                            <strong>YES →</strong> Continue to hook
+                        </div>
+                        <div class="response-option">
+                            <strong>NO →</strong> "Oh perfect, congrats on the sale! Do you happen to own any other properties you might consider selling?"
+                        </div>
+                        
+                        <div class="script-text">
+                            <strong>AGENT:</strong> "Perfect. I know this is out of the blue, but I buy land in [County] and I'm interested in making you an all-cash offer. Got 2 minutes for me to explain how this works?"
+                        </div>
+                        <div class="response-option">
+                            <strong>YES →</strong> Move to Phase 2 
+                            <span class="action-tag">CONTINUE</span>
+                        </div>
+                        <div class="response-option">
+                            <strong>NO →</strong> "I understand. Is that a 'not interested' for now, or is that a 'not interested' forever?"
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flow-box" onclick="toggleBox(this)">
+                    <div class="box-title">
+                        HANDLING REJECTION
+                        <span class="expand-icon">⌄</span>
+                    </div>
+                    <div class="box-preview">If they're not interested in moving forward...</div>
+                    <div class="box-content">
+                        <div class="script-text">
+                            <strong>AGENT:</strong> "I understand. Is that a 'not interested' for now, or is that a 'not interested' forever?"
+                        </div>
+                        <div class="response-option">
+                            <strong>NOT NOW →</strong> "Great! When would be a better time to check back with you - in a few weeks or a few months?"
+                            <span class="action-tag info-tag">NURTURE PATH</span>
+                        </div>
+                        <div class="response-option">
+                            <strong>NEVER →</strong> "Okay, no problem. So I'll be removing you from our list to never be contacted again. Is that what you'd prefer?"
+                            <span class="action-tag warning-tag">DNC PATH</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PHASE 2 -->
+            <div id="phase2" class="phase-section">
+                <div class="flow-box" onclick="toggleBox(this)">
+                    <div class="box-title">
+                        VALUE STATEMENT & INTEREST CHECK
+                        <span class="expand-icon">⌄</span>
+                    </div>
+                    <div class="box-preview">Setting expectations and checking selling interest...</div>
+                    <div class="box-content">
+                        <div class="script-text">
+                            <strong>AGENT:</strong> "Here's why I'm calling: We're a boutique family-owned land investment operation that specializes in [State/County]. We've closed over 1,000 deals. Unlike listing with an agent, we make cash offers, close in the next few weeks, and handle all the paperwork. No fees, no commissions, no waiting around.<br><br>
+                            The reason I'm reaching out specifically to you is we're actively buying in your area.<br><br>
+                            Real quick - is selling this land even on your radar, or I might be wasting both our time here?"
+                        </div>
+                        
+                        <div class="quick-tips">
+                            <h3>Alternative Questions:</h3>
+                            <ul>
+                                <li>"Quick question - would selling this property solve any problems for you, or is it not even on your mind?"</li>
+                                <li>"Before I take up more of your time - is selling something you're actually considering, or am I way off here?"</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="response-option">
+                            <strong>YES/INTERESTED →</strong> Move to Phase 3 
+                            <span class="action-tag">CONTINUE</span>
+                        </div>
+                        <div class="response-option">
+                            <strong>NO/NOT INTERESTED →</strong> Return to Section A (Nurture/DNC check)
+                            <span class="action-tag warning-tag">QUALIFY OUT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PHASE 3 -->
+            <div id="phase3" class="phase-section">
+                <div class="flow-box" onclick="toggleBox(this)">
+                    <div class="box-title">
+                        MOTIVATION DISCOVERY (WHY)
+                        <span class="expand-icon">⌄</span>
+                    </div>
+                    <div class="box-preview">Understanding their reason for selling...</div>
+                    <div class="box-content">
+                        <div class="script-text">
+                            <strong>AGENT:</strong> "Excellent. Let me ask you this - did you buy that land or inherit it?"
+                        </div>
+                        
+                        <div class="response-option">
+                            <strong>INHERITED →</strong>
+                            <div class="script-text" style="margin-left: 20px;">
+                                "I see. How long ago did you inherit it?"<br><br>
+                                [After response]<br><br>
+                                "A lot of folks who inherit land tell me it becomes more of a burden than a blessing. Has that been your experience?"
+                            </div>
+                        </div>
+                        
+                        <div class="response-option">
+                            <strong>PURCHASED →</strong>
+                            <div class="script-text" style="margin-left: 20px;">
+                                "Got it. How long ago did you buy it?"<br><br>
+                                [After response]<br><br>
+                                "What was your original idea when you bought it - were you going to use it for something specific?"
+                            </div>
+                        </div>
+                        
+                        <div class="script-text">
+                            <strong>TIMELINE CHECK:</strong><br>
+                            "If I could make you a fair offer today, is there any reason you wouldn't want to close in the next few weeks?"
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PHASE 4 -->
+            <div id="phase4" class="phase-section">
+                <div class="flow-box" onclick="toggleBox(this)">
+                    <div class="box-title">
+                        PRICE EXPECTATIONS
+                        <span class="expand-icon">⌄</span>
+                    </div>
+                    <div class="box-preview">Setting investor pricing expectations...</div>
+                    <div class="box-content">
+                        <div class="script-text">
+                            <strong>AGENT:</strong> "Now, before we go any further, I want to share that we're probably not the right fit for all. We work with folks who value speed and convenience over squeezing out every last dollar. We definitely pay 20-50% more than any other investment company out there though.<br><br>
+                            
+                            We close in a few weeks with cash, buy as-is, and handle everything - but we're investors, not retail buyers.<br><br>
+                            
+                            If you're looking for absolute top dollar and have time to wait 6-12 months for the perfect buyer, you might be better off listing with a realtor.<br><br>
+                            
+                            But if you're more interested in getting this done quickly and moving on, then we can certainly help. Which camp are you in?"
+                        </div>
+                        
+                        <div class="response-option">
+                            <strong>SPEED/CONVENIENCE →</strong> "Perfect! Sounds like we're on the same page."
+                            <span class="action-tag">CONTINUE</span>
+                        </div>
+                        <div class="response-option">
+                            <strong>TOP DOLLAR →</strong> "I totally understand. Realtors charge 10% commission and average 6-12 months. Would you like our offer anyway to compare?"
+                            <span class="action-tag info-tag">EDUCATE</span>
+                        </div>
+                        <div class="response-option">
+                            <strong>DEPENDS →</strong> "Fair question. We're the highest-paying land investors you'll talk to. Want me to work up our best number?"
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PHASE 5 -->
+            <div id="phase5" class="phase-section">
+                <div class="flow-box" onclick="toggleBox(this)">
+                    <div class="box-title">
+                        OWNERSHIP VERIFICATION
+                        <span class="expand-icon">⌄</span>
+                    </div>
+                    <div class="box-preview">Confirming decision makers...</div>
+                    <div class="box-content">
+                        <div class="script-text">
+                            <strong>AGENT:</strong> "Just to confirm - are you the sole owner, or are there other people on the title?"
+                        </div>
+                        
+                        <div class="response-option">
+                            <strong>SOLE OWNER →</strong> "Perfect, that makes things simple."
+                            <span class="action-tag">CONTINUE</span>
+                        </div>
+                        
+                        <div class="response-option">
+                            <strong>MULTIPLE OWNERS →</strong> "Got it. Are all the owners on board with selling, or do you need to have some conversations first?"
+                            <div class="script-text" style="margin-left: 20px;">
+                                If not all aligned: "I understand. Here's what we can do - I'll work up an offer anyway. Sometimes having a real number on the table helps everyone make a decision."
+                            </div>
+                        </div>
+                        
+                        <div class="response-option">
+                            <strong>INHERITED →</strong> "Do you have 100% authority to sell, or is the title work still being sorted out?"
+                            <div class="script-text" style="margin-left: 20px;">
+                                If unclear: "No problem. I'll make a note of that and our underwriting team will review it on a case-by-case basis."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PHASE 6 -->
+            <div id="phase6" class="phase-section">
+                <div class="flow-box" onclick="toggleBox(this)">
+                    <div class="box-title">
+                        ACCESS VERIFICATION
+                        <span class="expand-icon">⌄</span>
+                    </div>
+                    <div class="box-preview">Checking property access...</div>
+                    <div class="box-content">
+                        <div class="script-text">
+                            <strong>AGENT:</strong> "Does the property have road frontage, or do you access it through an easement?"
+                        </div>
+                        
+                        <div class="response-option">
+                            <strong>ROAD FRONTAGE →</strong> "Perfect, that's ideal."
+                            <span class="action-tag">CONTINUE</span>
+                        </div>
+                        
+                        <div class="response-option">
+                            <strong>EASEMENT →</strong> "Is that a recorded easement? Legal and permanent?"
+                        </div>
+                        
+                        <div class="response-option">
+                            <strong>UNCLEAR →</strong> "No worries. Can you physically drive to the property?"
+                        </div>
+                        
+                        <div class="quick-tips">
+                            <h3>Key Phrase for Unclear Situations:</h3>
+                            <p>"Look, I'm not the expert on title and access issues - that's what our underwriting team does. Let me get all your information, and they'll dig into the details to see what's possible. We deal with complicated situations all the time."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PHASE 7 -->
+            <div id="phase7" class="phase-section">
+                <div class="flow-box" onclick="toggleBox(this)">
+                    <div class="box-title">
+                        ADDITIONAL INFORMATION
+                        <span class="expand-icon">⌄</span>
+                    </div>
+                    <div class="box-preview">Quick details to complete the file...</div>
+                    <div class="box-content">
+                        <div class="script-text">
+                            <strong>AGENT:</strong> "Just a few more quick details:"
+                        </div>
+                        
+                        <div class="quick-tips">
+                            <h3>Questions to Ask:</h3>
+                            <ul>
+                                <li>"How long have you owned the property?"</li>
+                                <li>"Have you made any improvements to the property?"</li>
+                                <li>"What's the best way to send you our offer - email or regular mail?"</li>
+                                <li>"Do you own any other properties you might consider selling?"</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="response-option">
+                            <strong>EMAIL →</strong> "Perfect. Can you confirm your email address for me?"
+                        </div>
+                        <div class="response-option">
+                            <strong>MAIL →</strong> "Sure thing. What's the best mailing address?"
+                        </div>
+                        <div class="response-option">
+                            <strong>OTHER PROPERTIES →</strong> "Oh great! Are they also in [State/County], or elsewhere?"
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PHASE 8 -->
+            <div id="phase8" class="phase-section">
+                <div class="flow-box" onclick="toggleBox(this)">
+                    <div class="box-title">
+                        THE CLOSE
+                        <span class="expand-icon">⌄</span>
+                    </div>
+                    <div class="box-preview">Wrapping up and setting expectations...</div>
+                    <div class="box-content">
+                        <div class="script-text">
+                            <strong>QUICK SUMMARY:</strong><br>
+                            "Great! So just to confirm - you own [acreage] in [County], you're interested in selling, and you'd like to receive our cash offer by [email/mail]. Did I get everything?"
+                        </div>
+                        
+                        <div class="script-text">
+                            <strong>NEXT STEPS:</strong><br>
+                            "Perfect. Here's what happens next:<br><br>
+                            I'll get this to our underwriting team on a priority basis. You'll receive our cash offer within the next few hours. Let me just confirm - I'm sending this to [email/phone] - is that correct?"
+                        </div>
+                        
+                        <div class="script-text">
+                            <strong>FINAL CLOSE:</strong><br>
+                            "Excellent. Is there anything else I can answer for you before we wrap up?"<br><br>
+                            [If no questions]<br><br>
+                            "Perfect! Look for that offer in the next few hours. Thanks for your time, [Name]!"
+                        </div>
+                        
+                        <div class="response-option">
+                            <strong>IF THEY ASK ABOUT PRICE:</strong> "I need our team to run the numbers to give you our best offer. You'll have it in the next few hours. Fair?"
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quick-tips">
+                    <h3>Lead Scoring Quick Reference:</h3>
+                    <ul>
+                        <li><strong>DISTRESS (10):</strong> Urgent! Crisis situation</li>
+                        <li><strong>HOT (8-9):</strong> Definitely selling + price flexible</li>
+                        <li><strong>WARM (7):</strong> Probably selling + some flexibility</li>
+                        <li><strong>LWARM (6):</strong> Maybe interested + needs convincing</li>
+                        <li><strong>COLD (5):</strong> Just curious + wants retail</li>
+                        <li><strong>NURTURE (4):</strong> Not now, maybe later</li>
+                        <li><strong>DD (3):</strong> Ownership/Access issues</li>
+                        <li><strong>DNC (2):</strong> Never! Don't call!</li>
+                        <li><strong>WRNG (1):</strong> Wrong number</li>
+                        <li><strong>UNDETER (0):</strong> Can't determine ownership or interest</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showPhase(phaseId) {
+            // Hide all phases
+            const phases = document.querySelectorAll('.phase-section');
+            phases.forEach(phase => phase.classList.remove('active'));
+            
+            // Show selected phase
+            document.getElementById(phaseId).classList.add('active');
+            
+            // Update button states
+            const buttons = document.querySelectorAll('.phase-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('inactive');
+            });
+            
+            // Make clicked button active
+            event.target.classList.remove('inactive');
+            event.target.classList.add('active');
+        }
+        
+        function toggleBox(element) {
+            element.classList.toggle('expanded');
+        }
+        
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const activePhase = document.querySelector('.phase-section.active');
+            const phases = ['phase1', 'phase2', 'phase3', 'phase4', 'phase5', 'phase6', 'phase7', 'phase8'];
+            const currentIndex = phases.indexOf(activePhase.id);
+            
+            if (e.key === 'ArrowRight' && currentIndex < phases.length - 1) {
+                const nextPhase = phases[currentIndex + 1];
+                document.querySelector(`[onclick="showPhase('${nextPhase}')"]`).click();
+            } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                const prevPhase = phases[currentIndex - 1];
+                document.querySelector(`[onclick="showPhase('${prevPhase}')"]`).click();
+            }
+        });
+        
+        // Add visual feedback for expandable boxes
+        document.querySelectorAll('.flow-box').forEach(box => {
+            box.addEventListener('mouseenter', function() {
+                if (!this.classList.contains('expanded')) {
+                    this.style.borderColor = '#764ba2';
+                }
+            });
+            
+            box.addEventListener('mouseleave', function() {
+                if (!this.classList.contains('expanded')) {
+                    this.style.borderColor = '#667eea';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

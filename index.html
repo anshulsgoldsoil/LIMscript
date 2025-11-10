@@ -500,22 +500,30 @@
             margin-top: 0;
         }
         
+        /* Fixed Timeline Styles */
         .process-timeline {
             display: flex;
             justify-content: space-between;
             margin: 30px 0;
             position: relative;
+            gap: 20px;
         }
         
         .process-timeline::before {
             content: '';
             position: absolute;
             top: 25px;
-            left: 0;
-            right: 0;
+            left: 50px;
+            right: 50px;
             height: 2px;
             background: #667eea;
             z-index: 0;
+        }
+        
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
         }
         
         .timeline-step {
@@ -531,15 +539,41 @@
             color: #667eea;
             position: relative;
             z-index: 1;
+            margin: 0 auto;
         }
         
         .timeline-content {
-            position: absolute;
-            top: 60px;
-            left: 50%;
-            transform: translateX(-50%);
+            margin-top: 20px;
             text-align: center;
-            width: 200px;
+        }
+        
+        .timeline-content h4 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content p {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .timeline-content ul li {
+            padding: 3px 0;
+            color: #555;
+        }
+        
+        .timeline-content ul li:before {
+            content: "• ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 5px;
         }
         
         .highlight-box {
@@ -645,16 +679,20 @@
             .process-timeline {
                 flex-direction: column;
                 align-items: center;
+                gap: 30px;
             }
             
             .process-timeline::before {
                 display: none;
             }
             
+            .timeline-item {
+                width: 100%;
+                max-width: 300px;
+            }
+            
             .timeline-content {
-                position: relative;
-                top: 10px;
-                margin-bottom: 30px;
+                margin-top: 15px;
             }
         }
     </style>
@@ -1461,12 +1499,12 @@
             
             <h3>4. THE SELLER JOURNEY – OUR 4-STEP PROCESS</h3>
             <div class="process-timeline">
-                <div style="text-align: center;">
+                <div class="timeline-item">
                     <div class="timeline-step">1</div>
                     <div class="timeline-content">
                         <h4>Property Assessment</h4>
                         <p>(Day 1)</p>
-                        <ul style="text-align: left;">
+                        <ul>
                             <li>LIM learns situation</li>
                             <li>Same/next day appointment</li>
                             <li>Fair cash offer prepared</li>
@@ -1474,12 +1512,12 @@
                     </div>
                 </div>
                 
-                <div style="text-align: center;">
+                <div class="timeline-item">
                     <div class="timeline-step">2</div>
                     <div class="timeline-content">
                         <h4>Contract Executed</h4>
                         <p>(Within 24 Hours)</p>
-                        <ul style="text-align: left;">
+                        <ul>
                             <li>LAM presents offer</li>
                             <li>Line-by-line review</li>
                             <li>Both parties sign</li>
@@ -1487,12 +1525,12 @@
                     </div>
                 </div>
                 
-                <div style="text-align: center;">
+                <div class="timeline-item">
                     <div class="timeline-step">3</div>
                     <div class="timeline-content">
                         <h4>Paperwork Processed</h4>
                         <p>(Days 2-59)</p>
-                        <ul style="text-align: left;">
+                        <ul>
                             <li>Escrow opened</li>
                             <li>Due diligence</li>
                             <li>Title work completed</li>
@@ -1500,12 +1538,12 @@
                     </div>
                 </div>
                 
-                <div style="text-align: center;">
+                <div class="timeline-item">
                     <div class="timeline-step">4</div>
                     <div class="timeline-content">
                         <h4>Deal Funded & Closed</h4>
                         <p>(Day 30-60)</p>
-                        <ul style="text-align: left;">
+                        <ul>
                             <li>Payment method chosen</li>
                             <li>Funds transferred</li>
                             <li>Ownership transferred</li>

@@ -842,7 +842,7 @@
                             </div>
                             <div class="response-option">
                                 <strong>SELLER:</strong> "Yes, I still have it" / "Yeah, still got that property" / "I do"
-                                <br>→ Continue to hook
+                                <br>→ Continue to permission request
                             </div>
                             <div class="response-option">
                                 <strong>SELLER:</strong> "No, I sold that already" / "Got rid of it last year"
@@ -850,16 +850,66 @@
                             </div>
                             
                             <div class="script-text">
-                                <strong>AGENT:</strong> "Perfect. I know this is out of the blue, but I buy land in [County] and I'm interested in making you an all-cash offer. Got 2 minutes for me to explain how this works?"
+                                <strong>AGENT:</strong> "Okay awesome, this call should take about 5 minutes. I'm just going to double check some information about the property and assuming we're a good fit to work together, I'll schedule some time between you and our land acquisitions manager to go over details and an offer for you. Sound good?"
                             </div>
                             <div class="response-option">
-                                <strong>SELLER:</strong> "Sure, go ahead" / "Yeah, I can listen" / "Okay, what's this about?"
+                                <strong>SELLER:</strong> "Sure, go ahead" / "Yeah, that works" / "Okay, what do you need to know?"
                                 <br>→ Move to Phase 2 
                                 <span class="action-tag">CONTINUE</span>
                             </div>
                             <div class="response-option">
-                                <strong>SELLER:</strong> "I'm not interested" / "No thanks" / "I don't have time"
+                                <strong>SELLER:</strong> "I don't have 5 minutes" / "Not right now" / "I'm busy"
+                                <br><strong>AGENT:</strong> "No problem at all! When would be a better time for a quick 5-minute call - later today or tomorrow?"
+                                <span class="action-tag info-tag">RESCHEDULE</span>
+                            </div>
+                            <div class="response-option">
+                                <strong>SELLER:</strong> "I'm not interested" / "No thanks"
                                 <br><strong>AGENT:</strong> "I understand. Is that a 'not interested' for now, or is that a 'not interested' forever?"
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-box" onclick="toggleBox(this)">
+                        <div class="box-title">
+                            TEXT MESSAGE FOLLOW-UP SCENARIOS
+                            <span class="expand-icon">⌄</span>
+                        </div>
+                        <div class="box-preview">For leads who previously engaged via text message</div>
+                        <div class="box-content">
+                            <div class="script-text" style="background: #e3f2fd;">
+                                <strong>SCENARIO #1 - Seller expressed interest via text:</strong><br>
+                                <strong>AGENT:</strong> "Hey, is this [Name]?"<br>
+                                <strong>SELLER:</strong> "Yes"<br>
+                                <strong>AGENT:</strong> "Great! I'm reaching out because you were texting with my team and mentioned that you may be interested in selling a piece of land you own. Do you remember that conversation? Does that ring a bell?"
+                            </div>
+                            <div class="response-option">
+                                <strong>SELLER:</strong> "Yes, I remember" / "Yeah, we were texting" / "Oh right, about my land"
+                                <br>→ Continue to permission request
+                            </div>
+                            
+                            <div class="script-text" style="background: #fff3e0;">
+                                <strong>SCENARIO #2 - Seller responded but unclear interest:</strong><br>
+                                <strong>AGENT:</strong> "Hey, is this [Name]?"<br>
+                                <strong>SELLER:</strong> "Yes"<br>
+                                <strong>AGENT:</strong> "Great! I'm reaching out because you were texting with my team and wanted to check if you might be interested in selling a piece of land you own. Do you remember that conversation? Does that ring a bell?"
+                            </div>
+                            <div class="response-option">
+                                <strong>SELLER:</strong> "Yes, I got some texts" / "Yeah, but I wasn't sure" / "I remember something about that"
+                                <br>→ Continue to permission request
+                            </div>
+                            
+                            <div class="script-text">
+                                <strong>For BOTH scenarios, after acknowledgment:</strong><br>
+                                <strong>AGENT:</strong> "Okay awesome, this call should take about 5 minutes. I'm just going to double check some information about the property and assuming we're a good fit to work together, I'll schedule some time between you and our land acquisitions manager to go over details and an offer for you. Sound good?"
+                            </div>
+                            <div class="response-option">
+                                <strong>SELLER:</strong> "Sure" / "Okay" / "Go ahead"
+                                <br>→ Move to Phase 2
+                                <span class="action-tag">CONTINUE</span>
+                            </div>
+                            
+                            <div class="trainer-note">
+                                <strong>💡 Note:</strong> These text follow-up scenarios create a warmer opening since there's already been prior contact. Reference the text conversation to establish continuity and reduce cold-call resistance.
                             </div>
                         </div>
                     </div>

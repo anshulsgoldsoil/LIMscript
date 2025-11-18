@@ -1522,102 +1522,145 @@
                     </div>
                 </div>
                 
-                <!-- PHASE 3 - FULLY CORRECTED WITH ALL SECTIONS -->
-                <div id="phase3" class="phase-section">
-                    <div class="flow-box" onclick="toggleBox(this)">
-                        <div class="box-title">
-                            MOTIVATION DISCOVERY (WHY) - Part 1: Acquisition
-                            <span class="expand-icon">⌄</span>
-                        </div>
-                        <div class="box-preview">Understanding how they acquired the property...</div>
-                        <div class="box-content">
-                            <div class="script-text">
-                                <strong>AGENT:</strong> "Excellent. Let me ask you this - did you buy that land or inherit it?"
-                            </div>
-                            
-                            <div class="response-option">
-                                <strong>PATH A - SELLER:</strong> "I inherited it" / "It was my father's" / "Got it when my parents passed"
-                                <div class="script-text" style="margin-left: 20px;">
-                                    <strong>AGENT:</strong> "I see. How long ago did you inherit it?"<br><br>
-                                    <strong>SELLER:</strong> "About [X] years ago" / "It's been a while now"<br><br>
-                                    <strong>AGENT:</strong> "A lot of folks who inherit land tell me it becomes more of a burden than a blessing. Has that been your experience?"
-                                </div>
-                            </div>
-                            
-                            <div class="response-option">
-                                <strong>PATH B - SELLER:</strong> "I bought it" / "We purchased it as an investment" / "Bought it years ago"
-                                <div class="script-text" style="margin-left: 20px;">
-                                    <strong>AGENT:</strong> "Got it. How long ago did you buy it?"<br><br>
-                                    <strong>SELLER:</strong> "[X] years ago" / "Back in [year]"<br><br>
-                                    <strong>AGENT:</strong> "What was your original idea when you bought it - were you going to use it for something specific?"
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+ <!-- PHASE 3 - FULLY UPDATED WITH WHEN SECTION -->
+<div id="phase3" class="phase-section">
+    <div class="flow-box" onclick="toggleBox(this)">
+        <div class="box-title">
+            MOTIVATION DISCOVERY (WHY) - Part 1: Acquisition
+            <span class="expand-icon">⌄</span>
+        </div>
+        <div class="box-preview">Understanding how they acquired the property...</div>
+        <div class="box-content">
+            <div class="script-text">
+                <strong>AGENT:</strong> "Excellent. Let me ask you this - did you buy that land or inherit it?"
+            </div>
+            
+            <div class="response-option">
+                <strong>PATH A - SELLER:</strong> "I inherited it" / "It was my father's" / "Got it when my parents passed"
+                <div class="script-text" style="margin-left: 20px;">
+                    <strong>AGENT:</strong> "I see. How long ago did you inherit it?"<br><br>
+                    <strong>SELLER:</strong> "About [X] years ago" / "It's been a while now"<br><br>
+                    <strong>AGENT:</strong> "A lot of folks who inherit land tell me it becomes more of a burden than a blessing. Has that been your experience?"
+                </div>
+            </div>
+            
+            <div class="response-option">
+                <strong>PATH B - SELLER:</strong> "I bought it" / "We purchased it as an investment" / "Bought it years ago"
+                <div class="script-text" style="margin-left: 20px;">
+                    <strong>AGENT:</strong> "Got it. How long ago did you buy it?"<br><br>
+                    <strong>SELLER:</strong> "[X] years ago" / "Back in [year]"<br><br>
+                    <strong>AGENT:</strong> "What was your original idea when you bought it - were you going to use it for something specific?"
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flow-box" onclick="toggleBox(this)">
+        <div class="box-title">
+            MOTIVATION DISCOVERY (WHY) - Part 2: Usage & Plans
+            <span class="expand-icon">⌄</span>
+        </div>
+        <div class="box-preview">Based on whether they're using the property...</div>
+        <div class="box-content">
+            <div class="response-option">
+                <strong>SECTION D - SELLER (Not Using Property):</strong> "Honestly, we never use it" / "It just sits there" / "Haven't been there in years"
+                <div class="script-text" style="margin-left: 20px; background: #f1f8e9;">
+                    <strong>If they inherited and not using:</strong><br>
+                    <strong>AGENT:</strong> "Is this something your family wants to deal with in the future?"<br>
+                    <strong>SELLER:</strong> "Not really" / "It's just a hassle" / "We all live out of state"<br><br>
                     
-                    <div class="flow-box" onclick="toggleBox(this)">
-                        <div class="box-title">
-                            MOTIVATION DISCOVERY (WHY) - Part 2: Usage & Plans
-                            <span class="expand-icon">⌄</span>
-                        </div>
-                        <div class="box-preview">Based on whether they're using the property...</div>
-                        <div class="box-content">
-                            <div class="response-option">
-                                <strong>SECTION D - SELLER (Not Using Property):</strong> "Honestly, we never use it" / "It just sits there" / "Haven't been there in years"
-                                <div class="script-text" style="margin-left: 20px; background: #f1f8e9;">
-                                    <strong>If they inherited and not using:</strong><br>
-                                    <strong>AGENT:</strong> "Is this something your family wants to deal with in the future?"<br>
-                                    <strong>SELLER:</strong> "Not really" / "It's just a hassle" / "We all live out of state"<br><br>
-                                    
-                                    <strong>If they purchased but not using:</strong><br>
-                                    <strong>AGENT:</strong> "Why hold onto something you're not using when you could have cash instead in the next few weeks?"<br>
-                                    <strong>SELLER:</strong> "That's a good point" / "I hadn't thought of it that way"<br><br>
-                                    
-                                    <span class="action-tag">Continue to Timeline Check Below</span>
-                                </div>
-                            </div>
-                            
-                            <div class="response-option">
-                                <strong>SECTION E - SELLER (Has Future Plans):</strong> "We're planning to build on it" / "Going to retire there someday" / "Kids might use it"
-                                <div class="script-text" style="margin-left: 20px; background: #fff3e0;">
-                                    <strong>AGENT:</strong> "I hear you. How long have you been planning to do that?"<br><br>
-                                    
-                                    <strong>SELLER:</strong> "Oh, years now" / "Quite a while" / "Since we bought it"<br><br>
-                                    
-                                    <strong>AGENT:</strong> "So it's been years and hasn't happened yet... What if it never does? Would you rather have the cash now?"<br><br>
-                                    
-                                    <div style="margin-left: 20px; margin-top: 10px;">
-                                        <div style="background: #e8f5e9; padding: 10px; border-radius: 5px; margin: 5px 0;">
-                                            <strong>SELLER:</strong> "You know what, you're right" / "I guess that makes sense" / "Maybe cash would be better"
-                                            <br><span class="action-tag">Continue to Timeline Check Below</span>
-                                        </div>
-                                        <div style="background: #ffebee; padding: 10px; border-radius: 5px; margin: 5px 0;">
-                                            <strong>SELLER:</strong> "No, we're definitely keeping it" / "We'll use it eventually" / "Not ready to give up on the dream"
-                                            <br><span class="action-tag warning-tag">Return to Phase 1 Section A (Not interested - Nurture/DNC)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <strong>If they purchased but not using:</strong><br>
+                    <strong>AGENT:</strong> "Why hold onto something you're not using when you could have cash instead in the next few weeks?"<br>
+                    <strong>SELLER:</strong> "That's a good point" / "I hadn't thought of it that way"<br><br>
                     
-                    <div class="flow-box" onclick="toggleBox(this)">
-                        <div class="box-title">
-                            TIMELINE CHECK
-                            <span class="expand-icon">⌄</span>
+                    <span class="action-tag">Continue to WHEN Check Below</span>
+                </div>
+            </div>
+            
+            <div class="response-option">
+                <strong>SECTION E - SELLER (Has Future Plans):</strong> "We're planning to build on it" / "Going to retire there someday" / "Kids might use it"
+                <div class="script-text" style="margin-left: 20px; background: #fff3e0;">
+                    <strong>AGENT:</strong> "I hear you. How long have you been planning to do that?"<br><br>
+                    
+                    <strong>SELLER:</strong> "Oh, years now" / "Quite a while" / "Since we bought it"<br><br>
+                    
+                    <strong>AGENT:</strong> "So it's been years and hasn't happened yet... What if it never does? Would you rather have the cash now?"<br><br>
+                    
+                    <div style="margin-left: 20px; margin-top: 10px;">
+                        <div style="background: #e8f5e9; padding: 10px; border-radius: 5px; margin: 5px 0;">
+                            <strong>SELLER:</strong> "You know what, you're right" / "I guess that makes sense" / "Maybe cash would be better"
+                            <br><span class="action-tag">Continue to WHEN Check Below</span>
                         </div>
-                        <div class="box-preview">Confirming their selling timeline...</div>
-                        <div class="box-content">
-                            <div class="script-text" style="background: #e3f2fd;">
-                                <strong>AGENT:</strong> "If I could make you a fair offer today, is there any reason you wouldn't want to close in the next few weeks?"<br><br>
-                                
-                                <strong>SELLER:</strong> "No, that would be fine" / "I'd need to think about it" / "How fast are we talking?"<br><br>
-                                
-                                <span class="action-tag">Continue to Phase 4: Price Expectations</span>
-                            </div>
+                        <div style="background: #ffebee; padding: 10px; border-radius: 5px; margin: 5px 0;">
+                            <strong>SELLER:</strong> "No, we're definitely keeping it" / "We'll use it eventually" / "Not ready to give up on the dream"
+                            <br><span class="action-tag warning-tag">Return to Phase 1 Section A (Not interested - Nurture/DNC)</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="flow-box" onclick="toggleBox(this)">
+        <div class="box-title">
+            WHEN - TIMELINE CHECK
+            <span class="expand-icon">⌄</span>
+        </div>
+        <div class="box-preview">The WHEN check - confirming their timeline to sell...</div>
+        <div class="box-content">
+            <div class="script-text" style="background: #e3f2fd;">
+                <strong>THE "WHEN" CHECK - Choose One Approach:</strong><br><br>
+                
+                <div style="background: #fff; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #667eea;">
+                    <strong>Approach 1 - Commitment Timeline:</strong><br>
+                    <strong>AGENT:</strong> "If everything checks out - price, terms, everything - could you see yourself signing a sale agreement within the next few days?"
+                </div>
+                
+                <div style="background: #fff; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #667eea;">
+                    <strong>Approach 2 - Ideal World:</strong><br>
+                    <strong>AGENT:</strong> "In a perfect world, when would you want to have this land sold and the cash in your hand?"
+                </div>
+                
+                <div style="background: #fff; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #667eea;">
+                    <strong>Approach 3 - Price-Dependent:</strong><br>
+                    <strong>AGENT:</strong> "How soon would you want this done if the price was right?"
+                </div>
+                
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 2px solid #e0e0e0;">
+                    <strong>TYPICAL SELLER RESPONSES:</strong><br><br>
+                    
+                    <div class="response-option">
+                        <strong>SELLER:</strong> "Yes, I could sign in a few days" / "ASAP" / "Yesterday!" / "Within the month"
+                        <br>→ <span style="color: #28a745; font-weight: bold;">HOT LEAD - Ready to move fast</span>
+                        <br><span class="action-tag">Continue to Phase 4</span>
+                    </div>
+                    
+                    <div class="response-option">
+                        <strong>SELLER:</strong> "Maybe, depends on the offer" / "I'd need to see the numbers first"
+                        <br><strong>AGENT:</strong> "Of course! Let me gather the rest of the information so we can get you our best offer."
+                        <br><span class="action-tag info-tag">Continue but note hesitation</span>
+                    </div>
+                    
+                    <div class="response-option">
+                        <strong>SELLER:</strong> "Not that fast" / "I need more time" / "Maybe in a few months"
+                        <br><strong>AGENT:</strong> "No problem at all. What would need to happen between now and then for you to be ready?"
+                        <br>→ <span style="color: #ffc107; font-weight: bold;">WARM/NURTURE - Not urgent</span>
+                    </div>
+                    
+                    <div class="response-option">
+                        <strong>SELLER:</strong> "I'm not sure" / "I haven't thought about timing"
+                        <br><strong>AGENT:</strong> "That's fair. Let me ask it this way - is selling this property solving an immediate problem, or is it more of a 'nice to have'?"
+                        <br>→ Probe for urgency
+                    </div>
+                </div>
+                
+                <div class="trainer-note" style="margin-top: 20px;">
+                    <strong>💡 Trainer Note:</strong> The WHEN check is critical. A seller might have interest (IF) and motivation (WHY), but if they're not ready to move soon, they may not be worth pursuing aggressively. This helps prioritize truly HOT leads.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
                 
                 <!-- PHASE 4 -->
                 <div id="phase4" class="phase-section">

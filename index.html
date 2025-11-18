@@ -1662,42 +1662,74 @@
     </div>
 </div>
                 
-                <!-- PHASE 4 -->
-                <div id="phase4" class="phase-section">
-                    <div class="flow-box" onclick="toggleBox(this)">
-                        <div class="box-title">
-                            PRICE EXPECTATIONS
-                            <span class="expand-icon">⌄</span>
-                        </div>
-                        <div class="box-preview">Setting investor pricing expectations...</div>
-                        <div class="box-content">
-                            <div class="script-text">
-                                <strong>AGENT:</strong> "Now, before we go any further, I want to share that we're probably not the right fit for all. We work with folks who value speed and convenience over squeezing out every last dollar. We definitely pay 20-50% more than any other investment company out there though.<br><br>
-                                
-                                We close in a few weeks with cash, buy as-is, and handle everything - but we're investors, not retail buyers.<br><br>
-                                
-                                If you're looking for absolute top dollar and have time to wait 6-12 months for the perfect buyer, you might be better off listing with a realtor.<br><br>
-                                
-                                But if you're more interested in getting this done quickly and moving on, then we can certainly help. Which camp are you in?"
-                            </div>
-                            
-                            <div class="response-option">
-                                <strong>SELLER:</strong> "Speed is more important to me" / "I just want it gone" / "Quick and easy sounds good"
-                                <br><strong>AGENT:</strong> "Perfect! Sounds like we're on the same page."
-                                <span class="action-tag">CONTINUE</span>
-                            </div>
-                            <div class="response-option">
-                                <strong>SELLER:</strong> "I need top dollar" / "I want full market value" / "I'm not in a hurry"
-                                <br><strong>AGENT:</strong> "I totally understand. Realtors charge 10% commission and average 6-12 months. Would you like our offer anyway to compare?"
-                                <span class="action-tag info-tag">EDUCATE</span>
-                            </div>
-                            <div class="response-option">
-                                <strong>SELLER:</strong> "Depends on the offer" / "How much are we talking?" / "What's your offer?"
-                                <br><strong>AGENT:</strong> "Fair question. We're the highest-paying land investors you'll talk to. Want me to work up our best number?"
-                            </div>
-                        </div>
-                    </div>
+<!-- PHASE 4 -->
+<div id="phase4" class="phase-section">
+    <div class="flow-box" onclick="toggleBox(this)">
+        <div class="box-title">
+            PRICE EXPECTATIONS
+            <span class="expand-icon">⌄</span>
+        </div>
+        <div class="box-preview">Setting investor pricing expectations...</div>
+        <div class="box-content">
+            <div class="script-text">
+                <strong>CHOOSE YOUR APPROACH - Pick the version that fits your style:</strong>
+            </div>
+            
+            <div style="background: #f0f4ff; padding: 15px; border-radius: 10px; margin: 15px 0; border-left: 4px solid #667eea;">
+                <strong>Version 1 - Mutual Benefit Focus:</strong><br><br>
+                <strong>AGENT:</strong> "Before we go any further, I want to make sure we're a right fit for you and our investment needs. We take all the risk here - buying sight unseen, as-is, no inspections, no contingencies. That level of risk means our offer includes a safety margin. Sure, you might squeeze out more dollars with a realtor over 6-12 months, minus their hefty commission. But we're offering something different - guaranteed cash in weeks with zero hassle on your end. Does that type of arrangement work for what you're trying to accomplish?"
+            </div>
+            
+            <div style="background: #fff5e6; padding: 15px; border-radius: 10px; margin: 15px 0; border-left: 4px solid #ff9800;">
+                <strong>Version 2 - Partnership Tone:</strong><br><br>
+                <strong>AGENT:</strong> "Let me share how we work to see if we're a right fit for you and our investment needs. We take all the risk here - buying sight unseen, as-is, no inspections, no contingencies. That level of risk means our offer includes a safety margin. Sure, you might squeeze out more dollars with a realtor over 6-12 months, minus their hefty commission. But we're offering something different - guaranteed cash in weeks with zero hassle on your end. Would this approach align with your goals?"
+            </div>
+            
+            <div style="background: #f1f8e9; padding: 15px; border-radius: 10px; margin: 15px 0; border-left: 4px solid #4caf50;">
+                <strong>Version 3 - Direct and Clear:</strong><br><br>
+                <strong>AGENT:</strong> "I want to be transparent to ensure we're a right fit for you and our investment needs. We take all the risk here - buying sight unseen, as-is, no inspections, no contingencies. That level of risk means our offer includes a safety margin. Sure, you might squeeze out more dollars with a realtor over 6-12 months, minus their hefty commission. But we're offering something different - guaranteed cash in weeks with zero hassle on your end. Does that sound like something that would work for your situation?"
+            </div>
+            
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 2px solid #e0e0e0;">
+                <strong>SELLER RESPONSES TO HANDLE:</strong><br><br>
+                
+                <div class="response-option">
+                    <strong>SELLER:</strong> "Yes, that works for me" / "Speed is more important" / "I just want it gone" / "Zero hassle sounds perfect"
+                    <br><strong>AGENT:</strong> "Perfect! Sounds like we're on the same page."
+                    <span class="action-tag">CONTINUE to Phase 5</span>
                 </div>
+                
+                <div class="response-option">
+                    <strong>SELLER:</strong> "I need top dollar" / "I want full market value" / "I'm not in a hurry"
+                    <br><strong>AGENT:</strong> "I totally understand. Just remember - realtors charge 10% commission and average 6-12 months, and about 30% of deals fall through. Would you like our offer anyway to compare against other options?"
+                    <span class="action-tag info-tag">EDUCATE & OFFER COMPARISON</span>
+                </div>
+                
+                <div class="response-option">
+                    <strong>SELLER:</strong> "Depends on the offer" / "How much are we talking?" / "What's your offer?"
+                    <br><strong>AGENT:</strong> "Fair question. We pride ourselves on making the highest offers in the investment space - typically 20-50% more than other investors. Let me gather the rest of your property details so I can work up our best number for you."
+                    <span class="action-tag">CONTINUE with caution</span>
+                </div>
+                
+                <div class="response-option">
+                    <strong>SELLER:</strong> "What do you mean by safety margin?" / "How much less are we talking?"
+                    <br><strong>AGENT:</strong> "Great question. Because we're taking on all the risk and costs, our offers typically come in at 50-70% of retail value. But remember - that's compared to what you might get after 6-12 months, minus realtor fees, minus any repairs they'd require, minus your carrying costs. When you factor all that in, the difference is often much smaller than it first appears."
+                    <span class="action-tag info-tag">EDUCATE on net proceeds</span>
+                </div>
+                
+                <div class="response-option">
+                    <strong>SELLER:</strong> "I need to think about it" / "I'm not sure"
+                    <br><strong>AGENT:</strong> "Of course! This is a big decision. How about this - let me gather your property information and get you a no-obligation offer. Then you'll have real numbers to consider, not just concepts. Sound fair?"
+                    <span class="action-tag">SOFT CLOSE to continue</span>
+                </div>
+            </div>
+            
+            <div class="trainer-note">
+                <strong>💡 Trainer Note:</strong> The key here is to emphasize we take ALL THE RISK. This justifies why our price includes a safety margin. We're not trying to lowball - we're pricing in the risk of buying sight unseen with no contingencies.
+            </div>
+        </div>
+    </div>
+</div>
                 
                 <!-- PHASE 5 -->
                 <div id="phase5" class="phase-section">

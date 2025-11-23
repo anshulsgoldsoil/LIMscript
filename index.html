@@ -973,7 +973,7 @@
             </div>
             
             <div class="script-container">
-              <!-- PHASE 1: OPENING & INTEREST CHECK (COMBINED) -->
+<!-- PHASE 1: OPENING & INTEREST CHECK (COMBINED) -->
 <div id="phase1" class="script-phase">
     <div class="script-phase-header">
         <div class="phase-number">1</div>
@@ -984,75 +984,126 @@
         <div class="phase-time">~1.5 min</div>
     </div>
     
-    <div class="script-text">
-        <strong>AGENT:</strong> "Hey, is this [Name]?"
+    <!-- ============ HAPPY PATH - MAIN FLOW ============ -->
+    <div style="background: linear-gradient(135deg, #d4edda, #f8f9fa); padding: 20px; border-radius: 10px; border: 2px solid #28a745;">
+        <h3 style="color: #28a745; margin-bottom: 15px;">✅ MAIN FLOW - HAPPY PATH</h3>
+        
+        <div class="script-text">
+            <strong>AGENT:</strong> "Hey, is this [Name]?"
+        </div>
+        
+        <div class="response-option" style="background: #e8f5e9;">
+            <strong>SELLER:</strong> "Yes, this is [Name]" / "Yeah, speaking" / "That's me"
+            <br>→ Continue to property verification
+        </div>
+        
+        <div class="script-text">
+            <strong>AGENT:</strong> "Great! Quick question - do you still own that land in [County]?"
+        </div>
+        
+        <div class="response-option" style="background: #e8f5e9;">
+            <strong>SELLER:</strong> "Yes, I still have it" / "Yeah, still got that property" / "I do"
+            <br>→ Continue to interest check
+        </div>
+        
+        <div class="script-text">
+            <strong>AGENT:</strong> "Here's why I'm calling: We're a boutique family-owned land investment operation that specializes in [State/County]. We've closed over 1,000 deals. Unlike listing with an agent, we make cash offers, close in the next few weeks, and handle all the paperwork. No fees, no commissions, no waiting around.<br><br>
+            The reason I'm reaching out specifically to you is we're actively buying in your area.<br><br>
+            Real quick - is selling this land even on your radar, or I might be wasting both our time here?"
+        </div>
+        
+        <div class="response-option" style="background: #e8f5e9;">
+            <strong>SELLER:</strong> "Actually, I have been thinking about selling" / "Yeah, I might be interested" / "I'd consider it for the right price"
+            <br>→ Great! Continue to permission request
+        </div>
+        
+        <div class="script-text">
+            <strong>AGENT:</strong> "Okay awesome, this call should take about 5 minutes. I'm just going to double check some information about the property and assuming we're a good fit to work together, I'll schedule some time between you and our land acquisitions manager to go over details and an offer for you. Sound good?"
+        </div>
+        
+        <div class="response-option" style="background: #e8f5e9;">
+            <strong>SELLER:</strong> "Sure, go ahead" / "Yeah, that works" / "Okay, what do you need to know?"
+            <br><span class="action-tag">✅ QUALIFIED - Continue to Phase 2</span>
+        </div>
     </div>
     
-    <div class="response-option">
-        <strong>SELLER:</strong> "Yes, this is [Name]" / "Yeah, speaking" / "That's me"
-        <br>→ Continue to next question
+    <!-- ============ ALTERNATIVE SCENARIOS ============ -->
+    <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+        <h3 style="color: #ff6b6b; margin-bottom: 20px;">⚠️ ALTERNATIVE SCENARIOS</h3>
+        
+        <!-- WRONG PERSON SCENARIO -->
+        <div style="background: #ffebee; padding: 15px; border-radius: 8px; border-left: 5px solid #dc3545; margin-bottom: 20px;">
+            <h4 style="color: #dc3545;">❌ SCENARIO: Wrong Person</h4>
+            <div class="response-option">
+                <strong>SELLER:</strong> "No, you have the wrong person" / "There's no one here by that name"
+                <br><strong>AGENT:</strong> "Okay, I understand. So you don't own any vacant land that you might be willing to sell?"
+                <br>
+                <div style="margin-left: 20px; margin-top: 10px;">
+                    <strong>If NO:</strong> "No problem, have a great day!"
+                    <span class="action-tag warning-tag">Mark as WRNG</span><br>
+                    <strong>If YES:</strong> "Oh great! Tell me about your property..."
+                    <span class="action-tag info-tag">Continue flow</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- NOT INTERESTED SCENARIO -->
+        <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 5px solid #ffc107; margin-bottom: 20px;">
+            <h4 style="color: #ff9800;">🟡 SCENARIO: Not Interested in Selling</h4>
+            <div class="response-option">
+                <strong>After Interest Check - SELLER:</strong> "No, I'm not looking to sell" / "Not interested" / "We're keeping it"
+                <br><strong>AGENT:</strong> "I understand. Is that a 'not interested' for now, or is that a 'not interested' forever?"
+                <br>
+                <div style="margin-left: 20px; margin-top: 10px;">
+                    <strong>If "Not now":</strong> "When might be a better time to check back with you?"
+                    <span class="action-tag info-tag">NURTURE - Schedule follow-up</span><br>
+                    <strong>If "Never":</strong> "Got it, I'll make sure we don't contact you again. Have a great day!"
+                    <span class="action-tag warning-tag">DNC - Do not contact</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- NO TIME SCENARIO -->
+        <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; border-left: 5px solid #2196f3; margin-bottom: 20px;">
+            <h4 style="color: #2196f3;">📅 SCENARIO: Interested but No Time</h4>
+            <div class="response-option">
+                <strong>After Permission Request - SELLER:</strong> "I don't have time right now" / "I'm busy" / "Call me later"
+                <br><strong>AGENT:</strong> "No problem at all! Since you are interested in hearing an offer, when would be a better time for a quick 5-minute call - later today or tomorrow?"
+                <br>
+                <div style="margin-left: 20px; margin-top: 10px;">
+                    <strong>Get specific:</strong> "Morning or afternoon?" → Get exact time
+                    <span class="action-tag info-tag">RESCHEDULE - Set callback</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ALREADY SOLD SCENARIO -->
+        <div style="background: #f3e5f5; padding: 15px; border-radius: 8px; border-left: 5px solid #9c27b0;">
+            <h4 style="color: #9c27b0;">💜 SCENARIO: Already Sold Property</h4>
+            <div class="response-option">
+                <strong>SELLER:</strong> "I sold that already" / "Don't own it anymore"
+                <br><strong>AGENT:</strong> "Oh okay! Do you happen to own any other land you might consider selling?"
+                <br>
+                <div style="margin-left: 20px; margin-top: 10px;">
+                    <strong>If YES:</strong> "Tell me about that property..." → Continue flow<br>
+                    <strong>If NO:</strong> "No problem, thanks for your time!" → Mark as WRNG
+                </div>
+            </div>
+        </div>
     </div>
     
-    <div class="response-option">
-        <strong>SELLER:</strong> "No, you have the wrong person" / "There's no one here by that name"
-        <br><strong>AGENT:</strong> "Okay, I understand. So you don't own any vacant land that you might be willing to sell?"
-        <span class="action-tag warning-tag">If no → Mark as WRNG</span>
-    </div>
-    
-    <div class="script-text">
-        <strong>AGENT:</strong> "Great! Quick question - do you still own that land in [County]?"
-    </div>
-    
-    <div class="response-option">
-        <strong>SELLER:</strong> "Yes, I still have it" / "Yeah, still got that property" / "I do"
-        <br>→ Continue to interest check
-    </div>
-    
-    <!-- INTEREST CHECK (MOVED FROM FORMER PHASE 2) -->
-    <div class="script-text" style="background: #e3f2fd; margin-top: 20px;">
-        <strong>AGENT:</strong> "Here's why I'm calling: We're a boutique family-owned land investment operation that specializes in [State/County]. We've closed over 1,000 deals. Unlike listing with an agent, we make cash offers, close in the next few weeks, and handle all the paperwork. No fees, no commissions, no waiting around.<br><br>
-        The reason I'm reaching out specifically to you is we're actively buying in your area.<br><br>
-        Real quick - is selling this land even on your radar, or I might be wasting both our time here?"
-    </div>
-    
-    <div class="quick-tips">
-        <h3>Alternative Questions:</h3>
+    <!-- ALTERNATIVE INTEREST CHECK QUESTIONS -->
+    <div class="quick-tips" style="margin-top: 20px;">
+        <h3>🎯 Alternative Interest Check Questions:</h3>
         <ul>
             <li>"Quick question - would selling this property solve any problems for you, or is it not even on your mind?"</li>
             <li>"Before I take up more of your time - is selling something you're actually considering, or am I way off here?"</li>
+            <li>"We're buying land in [County] - any chance you'd be open to an offer?"</li>
         </ul>
     </div>
     
-    <div class="response-option">
-        <strong>SELLER:</strong> "Actually, I have been thinking about selling" / "Yeah, I might be interested" / "I'd consider it for the right price"
-        <br>→ Continue to permission request below
-    </div>
-    
-    <div class="response-option">
-        <strong>SELLER:</strong> "No, I'm not looking to sell" / "Not interested in selling" / "We're keeping the land"
-        <br><strong>AGENT:</strong> "I understand. Is that a 'not interested' for now, or is that a 'not interested' forever?"
-        <span class="action-tag warning-tag">NURTURE/DNC CHECK</span>
-    </div>
-    
-    <!-- PERMISSION REQUEST (ONLY IF INTERESTED) -->
-    <div class="script-text" style="background: #d4edda; margin-top: 20px;">
-        <strong>✅ PERMISSION REQUEST (Only if they said they're interested):</strong><br><br>
-        <strong>AGENT:</strong> "Okay awesome, this call should take about 5 minutes. I'm just going to double check some information about the property and assuming we're a good fit to work together, I'll schedule some time between you and our land acquisitions manager to go over details and an offer for you. Sound good?"
-    </div>
-    
-    <div class="response-option">
-        <strong>SELLER:</strong> "Sure, go ahead" / "Yeah, that works" / "Okay, what do you need to know?"
-        <span class="action-tag">Continue to Phase 2</span>
-    </div>
-    
-    <div class="response-option">
-        <strong>SELLER:</strong> "I don't have 5 minutes" / "Not right now" / "I'm busy"
-        <br><strong>AGENT:</strong> "No problem at all! When would be a better time for a quick 5-minute call - later today or tomorrow?"
-        <span class="action-tag info-tag">RESCHEDULE</span>
-    </div>
-    
     <div class="trainer-note">
-        <strong>💡 Note:</strong> We qualify interest BEFORE asking for time. Only interested sellers get the permission request.
+        <strong>💡 Key Strategy:</strong> We qualify interest BEFORE asking for time. This saves everyone time - only interested sellers continue past the 45-second mark. For text follow-ups, add: "I'm reaching out because you were texting with my team about your property..."
     </div>
 </div>
 

@@ -1013,24 +1013,17 @@
             <br>→ Continue
         </div>
         
+        <div style="background: #ffecd2; padding: 10px; border-radius: 5px; margin: 10px 0; border-left: 4px solid #ff6b6b;">
+            <strong>⚡ Why This Matters:</strong> "Great! Quick question..." is a pattern breaker. It signals something important is coming and grabs their full attention before the real ask.
+        </div>
+        
         <div class="script-text">
             <strong>AGENT:</strong> "Great! Quick question - do you still own that land in [County]?"
         </div>
         
         <div class="response-option" style="background: #e3f2fd;">
             <strong>SELLER:</strong> "Yes, I still have it"
-            <br>→ Continue
-        </div>
-        
-        <div class="script-text">
-            <strong>AGENT:</strong> "Here's why I'm calling: We're a boutique family-owned land investment operation that specializes in [State/County]. We've closed over 1,000 deals. Unlike listing with an agent, we make cash offers, close in the next few weeks, and handle all the paperwork. No fees, no commissions, no waiting around.<br><br>
-            The reason I'm reaching out specifically to you is we're actively buying in your area.<br><br>
-            Real quick - is selling this land even on your radar, or I might be wasting both our time here?"
-        </div>
-        
-        <div class="response-option" style="background: #d4edda;">
-            <strong>✅ SELLER:</strong> "I might be interested" / "Yeah, I've thought about selling"
-            <br>→ Go to PERMISSION REQUEST below
+            <br>→ Go to INTEREST CHECK below
         </div>
     </div>
     
@@ -1062,11 +1055,7 @@
         
         <div class="response-option" style="background: #e8f5e9;">
             <strong>SELLER:</strong> "Yes, I do"
-            <br>→ Skip interest check (they already expressed interest) and go to PERMISSION REQUEST
-        </div>
-        
-        <div class="trainer-note" style="background: #d4edda;">
-            <strong>💡 Note:</strong> They already expressed interest via text, so we skip the full pitch and interest check. Move straight to permission request.
+            <br>→ Go to INTEREST CHECK below
         </div>
     </div>
     
@@ -1091,74 +1080,57 @@
             <strong>AGENT:</strong> "Great! This is [Agent Name] from The Acre Deal. We were texting back and forth about your [acreage] acres in [County] - you were asking about [price/timeline/process] but I think we lost touch. I wanted to follow up and see if you're still interested in getting an offer on that property?"
         </div>
         
-        <div class="quick-tips" style="background: #fff5e6; margin: 10px 0;">
-            <h4>Alternative Re-engagement Approaches:</h4>
-            <ul>
-                <li>"We were discussing your land last [week/month] and you mentioned [specific detail they shared]. I wanted to circle back and see where you're at with that?"</li>
-                <li>"You were interested in our cash offer but I think my texts got buried. Still want to move forward with getting that offer?"</li>
-                <li>"We were in the middle of discussing your property in [County] - did you end up deciding what you wanted to do with it?"</li>
-            </ul>
-        </div>
-        
         <div class="response-option" style="background: #d4edda;">
-            <strong>PATH A - SELLER:</strong> "Oh yeah, sorry I got busy" / "Yes, I'm still interested" / "I've been meaning to get back to you"
-            <br><strong>AGENT:</strong> "No worries at all, happens all the time! So you're still looking to sell?"
-            <br>
-            <div style="margin-left: 20px; margin-top: 10px;">
-                <strong>SELLER:</strong> "Yes"
-                <br>→ Go to PERMISSION REQUEST (they're already warm)
-            </div>
+            <strong>SELLER:</strong> "Oh yeah, sorry I got busy" / "Yes, I'm still interested"
+            <br><strong>AGENT:</strong> "No worries at all, happens all the time!"
+            <br>→ Go to INTEREST CHECK below
         </div>
         
         <div class="response-option" style="background: #fff5e6;">
-            <strong>PATH B - SELLER:</strong> "I need to think about it more" / "I'm not sure anymore" / "What was your offer again?"
-            <br><strong>AGENT:</strong> "Totally understand! Just to refresh - we're cash buyers, we close quickly, and we cover all costs. What's holding you back - is it timing, price, or something else?"
-            <br>
-            <div style="margin-left: 20px; margin-top: 10px;">
-                <strong>If timing:</strong> "When would be better for you?"<br>
-                <strong>If price:</strong> "Let me get you our best number to consider"<br>
-                <strong>If unsure:</strong> "What questions can I answer to help you decide?"<br>
-                → Gauge if they're warm enough to continue or need nurturing
-            </div>
+            <strong>SELLER:</strong> "I need to think about it more" / "I'm not sure anymore"
+            <br><strong>AGENT:</strong> "Totally understand! Let me quickly remind you who we are and what we offer..."
+            <br>→ Go to INTEREST CHECK below
         </div>
         
         <div class="response-option" style="background: #ffebee;">
-            <strong>PATH C - SELLER:</strong> "I decided not to sell" / "I'm good" / "Not interested anymore"
-            <br><strong>AGENT:</strong> "No problem at all! What changed your mind, if you don't mind me asking?"
-            <br>
-            <div style="margin-left: 20px; margin-top: 10px;">
-                <strong>Listen for:</strong><br>
-                • "Got a better offer" → "Would you like our offer as backup?"<br>
-                • "Decided to keep it" → "Should I check back in a few months?"<br>
-                • "Don't want to deal with it" → "We handle everything for you..."<br>
-                → Either re-engage or mark as NURTURE/DNC
-            </div>
-        </div>
-        
-        <div class="response-option" style="background: #ffe0b2;">
-            <strong>PATH D - SELLER:</strong> "I don't remember texting" / "What are you talking about?"
-            <br><strong>AGENT:</strong> "I'm looking at our conversation from [timeframe] where you mentioned your [acreage] acres in [County]. You were asking about [specific thing they asked]. Ring a bell?"
-            <br>
-            <div style="margin-left: 20px; margin-top: 10px;">
-                <strong>If remembers:</strong> "Oh right!" → Continue with PATH A<br>
-                <strong>If suspicious:</strong> Verify details and rebuild trust<br>
-                <strong>If defensive:</strong> "No problem, I'll update our records" → Exit gracefully
-            </div>
-        </div>
-        
-        <div class="trainer-note" style="background: #fff5e6; margin-top: 15px;">
-            <strong>🎯 Ghosted Seller Psychology:</strong><br>
-            • They were interested enough to engage initially<br>
-            • Something made them pause (overwhelm, comparison shopping, life got busy)<br>
-            • Phone call feels more "real" than text - can rebuild momentum<br>
-            • Reference specific details from text conversation to prove legitimacy<br>
-            • Be understanding about the ghosting - don't make them feel bad
+            <strong>SELLER:</strong> "I don't remember texting" / "What are you talking about?"
+            <br><strong>AGENT:</strong> "I'm looking at our conversation from [timeframe] where you mentioned your [acreage] acres in [County]. Let me quickly explain who we are..."
+            <br>→ Go to INTEREST CHECK below
         </div>
     </div>
     
-    <!-- ============ PERMISSION REQUEST (ALL SCENARIOS CONVERGE HERE) ============ -->
+    <!-- ============ INTEREST CHECK (ALL SCENARIOS CONVERGE HERE) ============ -->
+    <div style="background: linear-gradient(135deg, #f0f4ff, #e3f2fd); padding: 20px; border-radius: 10px; border: 2px solid #667eea; margin-top: 30px;">
+        <h3 style="color: #667eea; margin-bottom: 15px;">🎯 INTEREST CHECK (All Scenarios)</h3>
+        
+        <div style="background: #ffecd2; padding: 10px; border-radius: 5px; margin-bottom: 15px; border-left: 4px solid #ff6b6b;">
+            <strong>⚡ Why This Matters:</strong> "Here's why I'm calling..." builds instant credibility AND creates a fork in the road. We get the first critical YES/NO here - don't waste time on people who will never sell.
+        </div>
+        
+        <div class="script-text">
+            <strong>AGENT:</strong> "Here's why I'm calling: We're a boutique family-owned land investment operation that specializes in [State/County]. We've closed over 1,000 deals. Unlike listing with an agent, we make cash offers, close in the next few weeks, and handle all the paperwork. No fees, no commissions, no waiting around.<br><br>
+            The reason I'm reaching out specifically to you is we're actively buying in your area.<br><br>
+            Real quick - is selling this land even on your radar, or I might be wasting both our time here?"
+        </div>
+        
+        <div class="response-option" style="background: #d4edda;">
+            <strong>✅ SELLER:</strong> "Actually, I have been thinking about selling" / "Yeah, I might be interested" / "I'd consider it for the right price"
+            <br>→ INTERESTED - Continue to Permission Request below
+        </div>
+        
+        <div class="response-option" style="background: #ffebee;">
+            <strong>❌ SELLER:</strong> "No, I'm not looking to sell" / "Not interested in selling" / "We're keeping the land"
+            <br>→ NOT INTERESTED - See Exit Scenarios below
+        </div>
+    </div>
+    
+    <!-- ============ PERMISSION REQUEST (FOR INTERESTED SELLERS) ============ -->
     <div style="background: linear-gradient(135deg, #d4edda, #c3e6cb); padding: 20px; border-radius: 10px; border: 2px solid #28a745; margin-top: 30px;">
-        <h3 style="color: #28a745; margin-bottom: 15px;">✅ PERMISSION REQUEST (For All Interested Sellers)</h3>
+        <h3 style="color: #28a745; margin-bottom: 15px;">✅ PERMISSION REQUEST (For Interested Sellers Only)</h3>
+        
+        <div style="background: #e8f5e9; padding: 10px; border-radius: 5px; margin-bottom: 15px; border-left: 4px solid #28a745;">
+            <strong>⚡ Why This Matters:</strong> Getting permission = micro-commitment. They've said YES to interest, now they're saying YES to the process. Multiple small yeses lead to the big YES.
+        </div>
         
         <div class="script-text">
             <strong>AGENT:</strong> "Okay awesome, this call should take about 5 minutes. I'm just going to double check some information about the property and assuming we're a good fit to work together, I'll schedule some time between you and our land acquisitions manager to go over details and an offer for you. Sound good?"
@@ -1176,9 +1148,9 @@
         </div>
     </div>
     
-    <!-- ============ ALTERNATIVE SCENARIOS (EXIT PATHS) ============ -->
+    <!-- ============ EXIT SCENARIOS (APPLY TO ALL THREE ENTRY PATHS) ============ -->
     <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
-        <h3 style="color: #ff6b6b; margin-bottom: 20px;">⚠️ EXIT SCENARIOS</h3>
+        <h3 style="color: #ff6b6b; margin-bottom: 20px;">⚠️ EXIT SCENARIOS (Apply to All Entry Paths)</h3>
         
         <!-- NOT INTERESTED -->
         <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 5px solid #ffc107; margin-bottom: 20px;">
@@ -1189,9 +1161,9 @@
                 <br>
                 <div style="margin-left: 20px; margin-top: 10px;">
                     <strong>If "Not now":</strong> "When might be a better time to check back?"
-                    <span class="action-tag info-tag">NURTURE</span><br>
-                    <strong>If "Never":</strong> "Got it, I'll make sure we don't contact you again."
-                    <span class="action-tag warning-tag">DNC</span>
+                    <span class="action-tag info-tag">NURTURE - Schedule follow-up</span><br>
+                    <strong>If "Never":</strong> "Got it, I'll make sure we don't contact you again. Have a great day!"
+                    <span class="action-tag warning-tag">DNC - Do not contact</span>
                 </div>
             </div>
         </div>
@@ -1205,43 +1177,41 @@
                 <br>
                 <div style="margin-left: 20px; margin-top: 10px;">
                     <strong>If NO:</strong> "Have a great day!" <span class="action-tag warning-tag">WRNG</span><br>
-                    <strong>If YES:</strong> "Oh great! Tell me about your property..." <span class="action-tag info-tag">Continue</span>
+                    <strong>If YES:</strong> "Oh great! Tell me about your property..." <span class="action-tag info-tag">Start fresh</span>
                 </div>
             </div>
         </div>
         
         <!-- ALREADY SOLD -->
-        <div style="background: #f3e5f5; padding: 15px; border-radius: 8px; border-left: 5px solid #9c27b0;">
+        <div style="background: #f3e5f5; padding: 15px; border-radius: 8px; border-left: 5px solid #9c27b0; margin-bottom: 20px;">
             <h4 style="color: #9c27b0;">💜 Already Sold Property</h4>
             <div class="response-option">
                 <strong>SELLER:</strong> "I sold that already" / "Don't own it anymore"
                 <br><strong>AGENT:</strong> "Oh okay! Do you happen to own any other land you might consider selling?"
                 <br>
                 <div style="margin-left: 20px; margin-top: 10px;">
-                    <strong>If YES:</strong> "Tell me about that property..." → Continue flow<br>
+                    <strong>If YES:</strong> "Tell me about that property..." → Start qualification<br>
                     <strong>If NO:</strong> "No problem, thanks for your time!" → Mark as WRNG
                 </div>
             </div>
         </div>
-    </div>
-    
-    <!-- ALTERNATIVE INTEREST CHECK QUESTIONS FOR COLD CALLS -->
-    <div class="quick-tips" style="margin-top: 20px;">
-        <h3>🎯 Alternative Interest Check Questions (Cold Call):</h3>
-        <ul>
-            <li>"Quick question - would selling this property solve any problems for you, or is it not even on your mind?"</li>
-            <li>"Before I take up more of your time - is selling something you're actually considering, or am I way off here?"</li>
-            <li>"We're buying land in [County] - any chance you'd be open to an offer?"</li>
-        </ul>
-    </div>
-    
-    <div class="trainer-note">
-        <strong>💡 Key Reminders:</strong> 
-        • Cold calls need full pitch and interest check<br>
-        • Text follow-ups (interested) skip straight to permission<br>
-        • Text follow-ups (ghosted) need gentle re-engagement<br>
-        • Always qualify interest BEFORE asking for 5 minutes<br>
-        • Reference specific details from prior conversations to build trust
+        
+        <!-- CHANGED MIND (SPECIFIC TO GHOSTED) -->
+        <div style="background: #ffe0b2; padding: 15px; border-radius: 8px; border-left: 5px solid #ff9800;">
+            <h4 style="color: #ff9800;">🔄 Changed Mind (Ghosted Scenario)</h4>
+            <div class="response-option">
+                <strong>SELLER:</strong> "I decided not to sell" / "Not interested anymore"
+                <br><strong>AGENT:</strong> "No problem! What changed, if you don't mind me asking?"
+                <br>
+                <div style="margin-left: 20px; margin-top: 10px;">
+                    <strong>Listen for:</strong><br>
+                    • "Got a better offer" → "Would you like our offer as backup?"<br>
+                    • "Decided to keep it" → "Should I check back in a few months?"<br>
+                    • "Don't want to deal with it" → "We handle everything for you..."<br>
+                    → Either re-engage or mark as NURTURE/DNC
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

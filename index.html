@@ -1059,45 +1059,41 @@
         </div>
     </div>
     
-    <!-- ============ SCENARIO 3: TEXT FOLLOW-UP (GHOSTED) ============ -->
-    <div style="background: linear-gradient(135deg, #fff3cd, #f8f9fa); padding: 20px; border-radius: 10px; border: 2px solid #ffc107; margin-bottom: 20px;">
-        <h3 style="color: #ff9800; margin-bottom: 15px;">👻 SCENARIO 3: TEXT FOLLOW-UP (Ghosted Mid-Conversation)</h3>
-        
-        <div class="trainer-note" style="background: #fff5e6; margin-bottom: 15px;">
-            <strong>Context:</strong> Seller was actively texting about their property, seemed interested, maybe even discussed price/details, but then stopped responding. This is a warm re-engagement call.
-        </div>
-        
-        <div class="script-text">
-            <strong>AGENT:</strong> "Hey, is this [Name]?"
-        </div>
-        
-        <div class="response-option" style="background: #fff5e6;">
-            <strong>SELLER:</strong> "Yes, this is [Name]"
-            <br>→ Continue
-        </div>
-        
-        <div class="script-text">
-            <strong>AGENT:</strong> "Great! I'm reaching out because you were texting with my team and wanted to check if you might be interested in selling a piece of land you own. Do you remember that conversation? Does that ring a bell?"
-        </div>
-        
-        <div class="response-option" style="background: #d4edda;">
-            <strong>SELLER:</strong> "Oh yeah, sorry I got busy" / "Yes, I'm still interested"
-            <br><strong>AGENT:</strong> "No worries at all, happens all the time!"
-            <br>→ Go to INTEREST CHECK below
-        </div>
-        
-        <div class="response-option" style="background: #fff5e6;">
-            <strong>SELLER:</strong> "I need to think about it more" / "I'm not sure anymore"
-            <br><strong>AGENT:</strong> "Totally understand! Let me quickly remind you who we are and what we offer..."
-            <br>→ Go to INTEREST CHECK below
-        </div>
-        
-        <div class="response-option" style="background: #ffebee;">
-            <strong>SELLER:</strong> "I don't remember texting" / "What are you talking about?"
-            <br><strong>AGENT:</strong> "I'm looking at our conversation from [timeframe] where you mentioned your [acreage] acres in [County]. Let me quickly explain who we are..."
-            <br>→ Go to INTEREST CHECK below
-        </div>
+   <!-- ============ SCENARIO 3: TEXT FOLLOW-UP (GHOSTED) ============ -->
+<div style="background: linear-gradient(135deg, #fff3cd, #f8f9fa); padding: 20px; border-radius: 10px; border: 2px solid #ffc107; margin-bottom: 20px;">
+    <h3 style="color: #ff9800; margin-bottom: 15px;">👻 SCENARIO 3: TEXT FOLLOW-UP (Ghosted Mid-Conversation)</h3>
+    
+    <div class="trainer-note" style="background: #fff5e6; margin-bottom: 15px;">
+        <strong>Context:</strong> Seller was actively texting about their property, seemed interested, maybe even discussed price/details, but then stopped responding. This is a warm re-engagement call.
     </div>
+    
+    <div class="script-text">
+        <strong>AGENT:</strong> "Hey, is this [Name]?"
+    </div>
+    
+    <div class="response-option" style="background: #fff5e6;">
+        <strong>SELLER:</strong> "Yes, this is [Name]"
+        <br>→ Continue
+    </div>
+    
+    <div class="script-text">
+        <strong>AGENT:</strong> "Great! I'm reaching out because you were texting with my team and wanted to check if you might be interested in selling a piece of land you own. Do you remember that conversation? Does that ring a bell?"
+    </div>
+    
+    <div class="response-option" style="background: #fff5e6;">
+        <strong>SELLER:</strong> "Oh yeah, I remember" / "Yes, about my property in [County]"
+        <br>→ Continue
+    </div>
+    
+    <div class="script-text">
+        <strong>AGENT:</strong> "Perfect! Just to confirm - you still own that land in [County], right?"
+    </div>
+    
+    <div class="response-option" style="background: #fff5e6;">
+        <strong>SELLER:</strong> "Yes, I do"
+        <br>→ Go to INTEREST CHECK below
+    </div>
+</div>
     
     <!-- ============ INTEREST CHECK (ALL SCENARIOS CONVERGE HERE) ============ -->
     <div style="background: linear-gradient(135deg, #f0f4ff, #e3f2fd); padding: 20px; border-radius: 10px; border: 2px solid #667eea; margin-top: 30px;">

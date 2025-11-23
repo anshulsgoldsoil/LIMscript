@@ -973,97 +973,103 @@
             </div>
             
             <div class="script-container">
-                <!-- PHASE 1: OPENING -->
-                <div id="phase1" class="script-phase">
-                    <div class="script-phase-header">
-                        <div class="phase-number">1</div>
-                        <div class="phase-info">
-                            <h2>OPENING & PERMISSION</h2>
-                            <p>Verify identity and get permission to proceed</p>
-                        </div>
-                        <div class="phase-time">~1 min</div>
-                    </div>
-                    
-                    <div class="script-text">
-                        <strong>AGENT:</strong> "Hey, is this [Name]?"
-                    </div>
-                    
-                    <div class="response-option">
-                        <strong>SELLER:</strong> "Yes, this is [Name]" / "Yeah, speaking" / "That's me"
-                        <br>→ Continue to next question
-                    </div>
-                    
-                    <div class="response-option">
-                        <strong>SELLER:</strong> "No, you have the wrong person" / "There's no one here by that name"
-                        <br><strong>AGENT:</strong> "Okay, I understand. So you don't own any vacant land that you might be willing to sell?"
-                        <span class="action-tag warning-tag">If no → Mark as WRNG</span>
-                    </div>
-                    
-                    <div class="script-text">
-                        <strong>AGENT:</strong> "Great! Quick question - do you still own that land in [County]?"
-                    </div>
-                    
-                    <div class="response-option">
-                        <strong>SELLER:</strong> "Yes, I still have it" / "Yeah, still got that property" / "I do"
-                        <br>→ Continue to permission request
-                    </div>
-                    
-                    <div class="script-text">
-                        <strong>AGENT:</strong> "Okay awesome, this call should take about 5 minutes. I'm just going to double check some information about the property and assuming we're a good fit to work together, I'll schedule some time between you and our land acquisitions manager to go over details and an offer for you. Sound good?"
-                    </div>
-                    
-                    <div class="response-option">
-                        <strong>SELLER:</strong> "Sure, go ahead" / "Yeah, that works" / "Okay, what do you need to know?"
-                        <span class="action-tag">Continue to Phase 2</span>
-                    </div>
-                    
-                    <div class="response-option">
-                        <strong>SELLER:</strong> "I don't have 5 minutes" / "Not right now" / "I'm busy"
-                        <br><strong>AGENT:</strong> "No problem at all! When would be a better time for a quick 5-minute call - later today or tomorrow?"
-                        <span class="action-tag info-tag">RESCHEDULE</span>
-                    </div>
-                    
-                    <div class="trainer-note">
-                        <strong>💡 Note:</strong> For text message follow-ups, reference the prior conversation: "I'm reaching out because you were texting with my team..."
-                    </div>
-                </div>
-                
-                <!-- PHASE 2: INTEREST CHECK -->
-                <div id="phase2" class="script-phase">
-                    <div class="script-phase-header">
-                        <div class="phase-number">2</div>
-                        <div class="phase-info">
-                            <h2>INTEREST CHECK (IF)</h2>
-                            <p>Determine if selling is on their radar</p>
-                        </div>
-                        <div class="phase-time">~30 sec</div>
-                    </div>
-                    
-                    <div class="script-text">
-                        <strong>AGENT:</strong> "Here's why I'm calling: We're a boutique family-owned land investment operation that specializes in [State/County]. We've closed over 1,000 deals. Unlike listing with an agent, we make cash offers, close in the next few weeks, and handle all the paperwork. No fees, no commissions, no waiting around.<br><br>
-                        The reason I'm reaching out specifically to you is we're actively buying in your area.<br><br>
-                        Real quick - is selling this land even on your radar, or I might be wasting both our time here?"
-                    </div>
-                    
-                    <div class="quick-tips">
-                        <h3>Alternative Questions:</h3>
-                        <ul>
-                            <li>"Quick question - would selling this property solve any problems for you, or is it not even on your mind?"</li>
-                            <li>"Before I take up more of your time - is selling something you're actually considering, or am I way off here?"</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="response-option">
-                        <strong>SELLER:</strong> "Actually, I have been thinking about selling" / "Yeah, I might be interested" / "I'd consider it for the right price"
-                        <span class="action-tag">Continue to Phase 3</span>
-                    </div>
-                    
-                    <div class="response-option">
-                        <strong>SELLER:</strong> "No, I'm not looking to sell" / "Not interested in selling" / "We're keeping the land"
-                        <br><strong>AGENT:</strong> "I understand. Is that a 'not interested' for now, or is that a 'not interested' forever?"
-                        <span class="action-tag warning-tag">NURTURE/DNC CHECK</span>
-                    </div>
-                </div>
+              <!-- PHASE 1: OPENING & INTEREST CHECK (COMBINED) -->
+<div id="phase1" class="script-phase">
+    <div class="script-phase-header">
+        <div class="phase-number">1</div>
+        <div class="phase-info">
+            <h2>OPENING & INTEREST CHECK</h2>
+            <p>Verify identity, property, and check interest early</p>
+        </div>
+        <div class="phase-time">~1.5 min</div>
+    </div>
+    
+    <div class="script-text">
+        <strong>AGENT:</strong> "Hey, is this [Name]?"
+    </div>
+    
+    <div class="response-option">
+        <strong>SELLER:</strong> "Yes, this is [Name]" / "Yeah, speaking" / "That's me"
+        <br>→ Continue to next question
+    </div>
+    
+    <div class="response-option">
+        <strong>SELLER:</strong> "No, you have the wrong person" / "There's no one here by that name"
+        <br><strong>AGENT:</strong> "Okay, I understand. So you don't own any vacant land that you might be willing to sell?"
+        <span class="action-tag warning-tag">If no → Mark as WRNG</span>
+    </div>
+    
+    <div class="script-text">
+        <strong>AGENT:</strong> "Great! Quick question - do you still own that land in [County]?"
+    </div>
+    
+    <div class="response-option">
+        <strong>SELLER:</strong> "Yes, I still have it" / "Yeah, still got that property" / "I do"
+        <br>→ Continue to interest check
+    </div>
+    
+    <!-- INTEREST CHECK (MOVED FROM FORMER PHASE 2) -->
+    <div class="script-text" style="background: #e3f2fd; margin-top: 20px;">
+        <strong>AGENT:</strong> "Here's why I'm calling: We're a boutique family-owned land investment operation that specializes in [State/County]. We've closed over 1,000 deals. Unlike listing with an agent, we make cash offers, close in the next few weeks, and handle all the paperwork. No fees, no commissions, no waiting around.<br><br>
+        The reason I'm reaching out specifically to you is we're actively buying in your area.<br><br>
+        Real quick - is selling this land even on your radar, or I might be wasting both our time here?"
+    </div>
+    
+    <div class="quick-tips">
+        <h3>Alternative Questions:</h3>
+        <ul>
+            <li>"Quick question - would selling this property solve any problems for you, or is it not even on your mind?"</li>
+            <li>"Before I take up more of your time - is selling something you're actually considering, or am I way off here?"</li>
+        </ul>
+    </div>
+    
+    <div class="response-option">
+        <strong>SELLER:</strong> "Actually, I have been thinking about selling" / "Yeah, I might be interested" / "I'd consider it for the right price"
+        <br>→ Continue to permission request below
+    </div>
+    
+    <div class="response-option">
+        <strong>SELLER:</strong> "No, I'm not looking to sell" / "Not interested in selling" / "We're keeping the land"
+        <br><strong>AGENT:</strong> "I understand. Is that a 'not interested' for now, or is that a 'not interested' forever?"
+        <span class="action-tag warning-tag">NURTURE/DNC CHECK</span>
+    </div>
+    
+    <!-- PERMISSION REQUEST (ONLY IF INTERESTED) -->
+    <div class="script-text" style="background: #d4edda; margin-top: 20px;">
+        <strong>✅ PERMISSION REQUEST (Only if they said they're interested):</strong><br><br>
+        <strong>AGENT:</strong> "Okay awesome, this call should take about 5 minutes. I'm just going to double check some information about the property and assuming we're a good fit to work together, I'll schedule some time between you and our land acquisitions manager to go over details and an offer for you. Sound good?"
+    </div>
+    
+    <div class="response-option">
+        <strong>SELLER:</strong> "Sure, go ahead" / "Yeah, that works" / "Okay, what do you need to know?"
+        <span class="action-tag">Continue to Phase 2</span>
+    </div>
+    
+    <div class="response-option">
+        <strong>SELLER:</strong> "I don't have 5 minutes" / "Not right now" / "I'm busy"
+        <br><strong>AGENT:</strong> "No problem at all! When would be a better time for a quick 5-minute call - later today or tomorrow?"
+        <span class="action-tag info-tag">RESCHEDULE</span>
+    </div>
+    
+    <div class="trainer-note">
+        <strong>💡 Note:</strong> We qualify interest BEFORE asking for time. Only interested sellers get the permission request.
+    </div>
+</div>
+
+<!-- PHASE 2: MOTIVATION & TIMELINE (FORMERLY PHASE 3) -->
+<div id="phase2" class="script-phase">
+    <div class="script-phase-header">
+        <div class="phase-number">2</div>
+        <div class="phase-info">
+            <h2>MOTIVATION (WHY) + TIMELINE (WHEN)</h2>
+            <p>Uncover their reason for selling and timeline</p>
+        </div>
+        <div class="phase-time">~2 min</div>
+    </div>
+    
+    <!-- Copy ALL the content from your current Phase 3 here -->
+    <!-- This is the "did you buy or inherit" section -->
+</div>
                 
                 <!-- PHASE 3: MOTIVATION & TIMELINE -->
                 <div id="phase3" class="script-phase">

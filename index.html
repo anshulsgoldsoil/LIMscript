@@ -2536,6 +2536,153 @@
                 <button class="action-btn" style="background: linear-gradient(135deg, #28a745, #20c997);" onclick="showKnowledgeBase()">📚 Knowledge Base</button>
             </div>
         </div>
+        <!-- Daily Workflow Calendar Page -->
+<div id="workflowCalendarPage" class="workflow-calendar phase-section" style="display: none;">
+    <h2>📅 DAILY LAUNCH CONTROL WORKFLOW CALENDAR</h2>
+    <p class="workflow-subtitle">Operational Schedule v1.2 – Calendar Format</p>
+    
+    <!-- 9:00 AM - Cleanup -->
+    <div class="time-block cleanup-block">
+        <div class="time-header">
+            <span class="time-badge">🕘 9:00 AM – 9:30 AM</span>
+            <span class="block-title">CLEANUP WINDOW</span>
+            <span class="block-type">NO NEW CAMPAIGNS</span>
+        </div>
+        <ul class="task-list">
+            <li>Respond to previous-day messages</li>
+            <li>Complete unfinished campaigns</li>
+            <li>Handle after-hours inquiries</li>
+            <li>Clear the inbox</li>
+        </ul>
+        <div class="warning-block">
+            No texting campaigns may begin before 9:30 AM
+        </div>
+    </div>
+    
+    <!-- 9:30 AM - Batch 1 -->
+    <div class="time-block batch-block">
+        <div class="time-header">
+            <span class="time-badge">🕤 9:30 AM</span>
+            <span class="block-title">BATCH #1</span>
+            <span class="block-type">33% OF DAILY VOLUME</span>
+        </div>
+        <ul class="task-list">
+            <li>Send first outbound text batch</li>
+            <li>Monitor immediate responses</li>
+        </ul>
+    </div>
+    
+    <!-- 10:00 AM - Calling Block 1 -->
+    <div class="time-block calling-block">
+        <div class="time-header">
+            <span class="time-badge">🕙 10:00 AM – 10:30 AM</span>
+            <span class="block-title">CALLING BLOCK #1</span>
+            <span class="block-type">SEQUENTIAL DIALER</span>
+        </div>
+        <ul class="task-list">
+            <li>60 call attempts</li>
+            <li>Call responders from Batch #1</li>
+        </ul>
+        <div class="conditional-workflow">
+            <h4>Conditional Workflow:</h4>
+            <ul class="task-list">
+                <li>If Batch #1 had low responses → send Batch #2 early</li>
+                <li>If Batch #1 had high responses → continue calling as normal</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 10:30 AM - Batch 2 -->
+    <div class="time-block batch-block">
+        <div class="time-header">
+            <span class="time-badge">🕥 10:30 AM</span>
+            <span class="block-title">BATCH #2</span>
+            <span class="block-type">33% OF DAILY VOLUME</span>
+        </div>
+        <ul class="task-list">
+            <li>Send second outbound text batch</li>
+            <li style="font-style: italic; color: #999;">(Skip if sent early due to low Batch #1 responses)</li>
+        </ul>
+    </div>
+    
+    <!-- 11:00 AM - Calling Block 2 -->
+    <div class="time-block calling-block">
+        <div class="time-header">
+            <span class="time-badge">🕚 11:00 AM – 12:00 PM</span>
+            <span class="block-title">CALLING BLOCK #2</span>
+            <span class="block-type">SEQUENTIAL DIALER</span>
+        </div>
+        <ul class="task-list">
+            <li>60 call attempts</li>
+            <li>Call responders from Batch #2</li>
+            <li>Triple-dial non-responsive warm leads</li>
+        </ul>
+    </div>
+    
+    <!-- 12:00 PM - Lunch -->
+    <div class="time-block lunch-block">
+        <div class="time-header">
+            <span class="time-badge">🕛 12:00 PM – 1:00 PM</span>
+            <span class="block-title">LUNCH BREAK</span>
+            <span class="block-type">LIMITED ACTIVITY</span>
+        </div>
+        <ul class="task-list">
+            <li>No campaigns are sent</li>
+            <li>Continue replying to active text conversations as needed</li>
+        </ul>
+    </div>
+    
+    <!-- 1:00 PM - Batch 3 -->
+    <div class="time-block batch-block">
+        <div class="time-header">
+            <span class="time-badge">🕐 1:00 PM</span>
+            <span class="block-title">BATCH #3</span>
+            <span class="block-type">33% OF DAILY VOLUME</span>
+        </div>
+        <ul class="task-list">
+            <li>Send final outbound text batch</li>
+            <li>Monitor responses</li>
+        </ul>
+    </div>
+    
+    <!-- 1:30 PM - Afternoon Operations -->
+    <div class="time-block calling-block">
+        <div class="time-header">
+            <span class="time-badge">🕜 1:30 PM – 5:00 PM</span>
+            <span class="block-title">AFTERNOON OPERATIONS BLOCK</span>
+            <span class="block-type">COLD CALLING + TEXT HANDLING</span>
+        </div>
+        <ul class="task-list">
+            <li>Cold call all ghosted responders</li>
+            <li>Triple-dial all warm leads who haven't answered</li>
+            <li>Respond to all incoming texts within 5 minutes</li>
+            <li>Maintain inbox-zero approach</li>
+            <li>Push all conversations toward a definite outcome</li>
+        </ul>
+    </div>
+    
+    <!-- End of Day Checklist -->
+    <div class="eod-checklist">
+        <h3>🧾 End-of-Day Checklist (5:00 PM)</h3>
+        <ul class="task-list">
+            <li>Clear all messages</li>
+            <li>Complete all conversations</li>
+            <li>Push ONLY definite-outcome leads to Salesforce</li>
+            <li>Move all incomplete conversations to Drip</li>
+            <li>Maintain 70% phone-qualified / 30% text-qualified</li>
+            <li>Leave inbox at ZERO</li>
+        </ul>
+        <div class="stats-highlight">
+            <strong>TARGET RATIO:</strong> 70% Phone-Qualified / 30% Text-Qualified
+        </div>
+    </div>
+    
+    <div class="btn-container">
+        <button class="action-btn" onclick="showPhase('welcomePage')">← Back to Framework</button>
+        <button class="action-btn" onclick="startTraining()">📖 View Script</button>
+        <button class="action-btn" onclick="showKnowledgeBase()">📚 Knowledge Base</button>
+    </div>
+</div>
     </div>
     
     <script>
